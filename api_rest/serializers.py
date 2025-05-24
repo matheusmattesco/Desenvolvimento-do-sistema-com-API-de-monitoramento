@@ -4,11 +4,10 @@ from .models import VideoPostura
 from django.core.validators import FileExtensionValidator
 
 class UserSerializer(serializers.ModelSerializer):
-    password = serializers.CharField(write_only=True)  # não mostra a senha na resposta
-
+    password = serializers.CharField(write_only=True)  
     class Meta:
         model = User
-        fields = ['id', 'username', 'password']  # escolha os campos que quiser expor
+        fields = ['id', 'username', 'password'] 
     
     def create(self, validated_data):
         user = User.objects.create_user(

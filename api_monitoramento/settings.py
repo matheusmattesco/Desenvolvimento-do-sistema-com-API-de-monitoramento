@@ -140,3 +140,15 @@ CORS_ALLOW_ORIGINS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header',
+            'description': 'JWT Authorization header usando o esquema Bearer. Exemplo: "Bearer <token>"',
+        }
+    },
+}
+

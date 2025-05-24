@@ -8,14 +8,6 @@ class User(models.Model):
 
 class VideoPostura(models.Model):
     nome = models.CharField(max_length=255)
-    video = models.FileField(upload_to='videos/', default='')  # <-- adiciona o campo para o vídeo
-    data_upload = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return self.nome
-    
-class VideoPostura(models.Model):
-    nome = models.CharField(max_length=255)
     video = models.FileField(upload_to='videos/', default='')
     data_upload = models.DateTimeField(auto_now_add=True)
     deitado = models.FloatField(default=0.0)
